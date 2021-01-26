@@ -5,12 +5,12 @@
         <div fxLayout="column" fxLayoutGap="5px">
             <mat-label>Monthly Income</mat-label>
             <span class="label-style">₹{{selectedIncomeValue}}</span>
-            <mat-slider name="income" min="100000" max="300000" step="1000" width="100%" [(ngModel)]="selectedIncomeValue"></mat-slider>
+            <mat-slider name="income" min="100000" max="300000" step="1000" (input)="onIncomeChange($event)"></mat-slider>
         </div>
         <div fxLayout="column" fxLayoutGap="5px">
             <span>Monthly Expense</span>
             <span class="label-style">₹{{selectedExpenseValue}}</span>
-            <mat-slider name="expense" min="0" max="100000" step="100000" width="100px" [(ngModel)]="selectedExpenseValue"></mat-slider>
+            <mat-slider name="expense" min="0" max="100000" step="1000" (input)="onExpenseChange($event)"></mat-slider>
         </div>
         <mat-form-field>
             <mat-label>Repayment Tenure</mat-label>

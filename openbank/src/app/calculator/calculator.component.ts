@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
   selector: 'app-calculator',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
-  selectedIncomeValue: number = 100000;
-  selectedExpenseValue: number = 0;
+  selectedIncomeValue: number | null = 100000;
+  selectedExpenseValue: number | null = 0;
   selectedTenureValue: string = '';
   isChecked = true;
   
@@ -32,4 +33,11 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onIncomeChange(eventData: MatSliderChange) {
+    this.selectedIncomeValue = eventData.value;
+  }
+
+  onExpenseChange(eventData: MatSliderChange) {
+    this.selectedExpenseValue = eventData.value;
+  }
 }
