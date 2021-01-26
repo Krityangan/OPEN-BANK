@@ -1,0 +1,46 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">   
+    <form class="calculator-class" fxLayout="column" fxLayoutAlign="space-around stretch" style="padding: 20px;"
+        fxLayoutGap="10px">
+        <div style="text-align: center;" class="mat-title">Eligibility Calculator</div>
+        <div fxLayout="column" fxLayoutGap="5px">
+            <mat-label>Monthly Income</mat-label>
+            <span class="label-style">₹{{selectedIncomeValue}}</span>
+            <mat-slider name="income" min="100000" max="300000" step="1000" width="100%" [(ngModel)]="selectedIncomeValue"></mat-slider>
+        </div>
+        <div fxLayout="column" fxLayoutGap="5px">
+            <span>Monthly Expense</span>
+            <span class="label-style">₹{{selectedExpenseValue}}</span>
+            <mat-slider name="expense" min="0" max="100000" step="100000" width="100px" [(ngModel)]="selectedExpenseValue"></mat-slider>
+        </div>
+        <mat-form-field>
+            <mat-label>Repayment Tenure</mat-label>
+            <mat-select name="tenure" [(ngModel)]="selectedTenureValue">
+                <mat-option *ngFor="let tenure of tenureList" [value]="tenure.label">
+                    {{tenure.label}}
+                </mat-option>
+            </mat-select>
+            <!-- <mat-select formControlName="tenure" [(ngModel)]="selectedTenureValue">
+                <mat-option *ngFor="let tenure of tenureList" [value]="tenure.label">
+                    {{tenure.label}}
+                </mat-option>
+            </mat-select> -->
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+            <span>Do you have any existing loans?</span>
+            <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle>
+        </div>
+        <mat-form-field>
+            <mat-label>EMI for existing loan(optional)</mat-label>
+            <input matInput name="emi" />
+        </mat-form-field>
+    </form>
+    <div>
+        <div class="calculator-side-div" fxLayout="column" fxLayoutAlign="center center" >
+            <span>Loan Amount</span>
+            <span class="label-style" style="margin-bottom: 25px;">₹ 100000</span>
+            <mat-label>You EMI will be</mat-label>
+            <span class="label-style" style="margin-bottom: 35px;">₹ 15000</span>
+            <div class="button-like">GET MONEY</div>
+        </div>
+    </div>
+</div>

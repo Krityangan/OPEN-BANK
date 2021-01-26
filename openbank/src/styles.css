@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+body {
+    font-family: 'Montserrat';
+}
+
+body {
+    background-image: 
+    url(./assets/images/blob-small.svg),
+    url(./assets/images/circle.svg),
+    url(./assets/images/accounting_dots.svg),
+    url(./assets/images/accounting_dots.svg);
+
+    background-position: 
+    top 160px left -130px,
+    top -150px right -110px,
+    top 660px left 280px,
+    top 770px right 0px;
+
+    background-size: 440px, 880px, 440px, 440px;
+    background-repeat: no-repeat;
+}

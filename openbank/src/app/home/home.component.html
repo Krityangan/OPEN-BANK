@@ -1,0 +1,42 @@
+<div #navBar id="nav-bar" fxLayout="row" fxLayoutAlign="space-between center" class="nav-bar" (scroll)="scrollFunction($event)">
+    <div>
+        <img src="../../assets/images/logo.png" height="90" width="90" id="org-logo" />
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
+        <a href="#navBar">Products</a>
+        <a href="#navBar">Solutions</a>
+        <a href="#navBar">Pricing</a>
+        <button>Login</button>
+        <button class="get-started-button">Get Started</button>
+    </div>
+</div>
+
+<div #upperHalf fxLayout="row" fxLayoutAlign="space-between start" class="upperHalf">
+    <div fxLayout="column" fxLayoutAlign="start start">
+        <span class="better">
+            <img src="../../assets/images/We make it Super Sim.svg" />
+            <img src="../../assets/images/Line 3.svg" width="150px" />
+        </span>
+        <img class="business" src="../../assets/images/collect_img-video.png" />
+    </div>
+    <app-calculator></app-calculator>
+</div>
+
+<div #lowerHalf class="background">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="margin: 0 10% 4% 3%;">
+        <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px" style="margin-right: 50px;">
+            <app-card *ngFor="let card of cardInfoList1" [logo]="card.logo" [title]="card.title"
+                [description]="card.description"></app-card>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px" style="margin-right: 70px;">
+            <app-card *ngFor="let card of cardInfoList2" [logo]="card.logo" [title]="card.title"
+                [description]="card.description"></app-card>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="30px">
+            <span style="font-size: 44px; font-weight: 600;">Boost your business with Open</span>
+            <img src="../../assets/images/Line 3.svg">
+            <span style="padding-bottom: 30px;">Get your hands on a term loan that’s crafted for your business</span>
+            <span class="button-like">Get an Open Account</span>
+        </div>
+    </div>
+</div>
